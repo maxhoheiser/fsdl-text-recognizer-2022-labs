@@ -13,6 +13,7 @@ Google Colab is a great way to get access to fast GPUs for free.
 All you need is a Google account.
 
 The preferred way to interact with the labs on Colab is just to click on badges like this one:
+
 <div align="center">
   <a href="http://fsdl.me/lab01-colab"> <img src=https://colab.research.google.com/assets/colab-badge.svg width=240> </a>
 </div> <br>
@@ -45,7 +46,7 @@ if "bootstrap" not in locals() or bootstrap.run:
         !echo $PYTHONPATH
 
     # get both Colab and local notebooks into the same state
-    !wget --quiet https://fsdl.me/gist-bootstrap -O bootstrap.py
+    !wget --quiet https://raw.githubusercontent.com/maxhoheiser/fsdl-text-recognizer-2022-labs/main/setup/bootstrap.py -O bootstrap.py
     import bootstrap
 
     # change into the lab directory
@@ -127,7 +128,6 @@ so it doesn't matter which installer you choose.
 In the project we use the version of Python used in Google Colab,
 which at time of writing is Python 3.10.
 
-
 Note that you will likely need to close and re-open your terminal.
 Afterwards, you should have ability to run the `conda` command in your terminal.
 
@@ -157,11 +157,13 @@ Using `pip-tools` lets us do three nice things:
 #### Set PYTHONPATH
 
 Last, run `export PYTHONPATH=.` before executing any commands later on, or you will get errors like this:
+
 ```python
 ModuleNotFoundError: No module named 'text_recognizer'
 ```
 
 In order to not have to set `PYTHONPATH` in every terminal you open, just add that line as the last line of the `~/.bashrc` file using a text editor of your choice (e.g. `nano ~/.bashrc`) or by concatenating with `>>`
+
 ```bash
 echo "export PYTHONPATH=.:$PYTHONPATH" >> ~/.bashrc
 ```
