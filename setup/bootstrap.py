@@ -52,7 +52,7 @@ def change_to_lab_dir(lab_idx=None):
 
 
 def _clone_repo(repo, branch, prefix):
-    url = f"https://{prefix}github.com/maxhoheiser/fsdl-text-recognizer-2022-labs/{repo}"
+    url = f"https://{prefix}github.com/maxhoheiser/{repo}"
     subprocess.run(  # run git clone
         ["git", "clone", "--branch", branch, "-q", url], check=True)
 
